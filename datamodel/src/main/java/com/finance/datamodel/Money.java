@@ -31,4 +31,14 @@ public class Money {
 		}
 		return this;
 	}
+
+	public Money minus(final Money money) {
+		if (money == null) {
+			return this;
+		}
+		if (this.currency.equals(money.getCurrency()) && this.amount >= money.amount) {
+			this.amount -= money.amount;
+		}
+		return this;
+	}
 }
