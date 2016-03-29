@@ -28,4 +28,36 @@ public class MoneyTest {
 
 	}
 
+	@Test
+	public void testMinusSameCurrency() {
+		final Money ping = new Money(6.24, "EUR");
+		final Money pong = new Money(4.15, "EUR");
+
+		ping.minus(pong);
+
+		assertThat(ping.getAmount(), is(2.09));
+	}
+
+	@Test
+	public void testMinusDifferentCurrency() {
+		final Money ping = new Money(6.24, "EUR");
+		final Money pong = new Money(4.15, "RON");
+
+		ping.minus(pong);
+
+		assertThat(ping.getAmount(), is(6.24));
+
+	}
+
+	@Test
+	public void testMinusNegativeValue() {
+		final Money ping = new Money(4.15, "EUR");
+		final Money pong = new Money(6.24, "EUR");
+
+		ping.minus(pong);
+
+		assertThat(ping.getAmount(), is(4.24));
+
+	}
+
 }
