@@ -19,12 +19,12 @@ public class Amount {
 		return this.money;
 	}
 
-	public Budget getBudget() {
-		return this.budget;
+	public String getBudgetName() {
+		return this.budget.getName();
 	}
 
-	public Account getAccount() {
-		return this.account;
+	public String getAccountIBAN() {
+		return this.account.getIBAN();
 	}
 
 }
