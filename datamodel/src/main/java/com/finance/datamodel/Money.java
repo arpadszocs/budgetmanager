@@ -2,13 +2,12 @@ package com.finance.datamodel;
 
 public class Money {
 
-	private static final String DEFAULT_CURRENCY = "EUR";
+	private static final Currency DEFAULT_CURRENCY = Currency.EUR;
 	public static final Money MONEY0 = new Money(0D, DEFAULT_CURRENCY);
 	private Double amount;
-	// TODO: create enums instead
-	private final String currency;
+	private final Currency currency;
 
-	public Money(final Double amount, final String currency) {
+	public Money(final Double amount, final Currency currency) {
 		super();
 		this.amount = amount;
 		this.currency = currency;
@@ -18,7 +17,7 @@ public class Money {
 		return this.amount;
 	}
 
-	public String getCurrency() {
+	public Currency getCurrency() {
 		return this.currency;
 	}
 
@@ -26,7 +25,7 @@ public class Money {
 		if (money == null) {
 			return this;
 		}
-		if (this.currency.equals(money.getCurrency())) {
+		if (this.currency == money.getCurrency()) {
 			this.amount += money.amount;
 		}
 		return this;
@@ -36,7 +35,7 @@ public class Money {
 		if (money == null) {
 			return this;
 		}
-		if (this.currency.equals(money.getCurrency()) && this.amount >= money.amount) {
+		if (this.currency == money.getCurrency()) {
 			this.amount -= money.amount;
 		}
 		return this;
