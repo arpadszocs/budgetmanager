@@ -16,9 +16,9 @@ public class PercentageTest {
 
 	@Test
 	public void testPercentageAsFactor() {
-		final Percentage percentage = new Percentage(100, 200);
+		final Percentage percentage = new Percentage(50, 200);
 
-		assertThat(percentage.asFactor(), is(0.50));
+		assertThat(percentage.asFactor(), is(0.25));
 
 	}
 
