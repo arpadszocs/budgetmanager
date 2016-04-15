@@ -17,8 +17,10 @@ public class Plan {
 		return planned - actual;
 	}
 
-	public Percentage getDifferenceInPercentage() {
-		return new Percentage(this.actual.getCurrentAmount().getAmount(), this.planned.getMoney().getAmount());
+	public double getDifferenceInPercentage() {
+		final Percentage percentage = new Percentage(this.actual.getCurrentAmount().getAmount(),
+				this.planned.getMoney().getAmount());
+		return percentage.asValue();
 	}
 
 	public Amount getPlanned() {
