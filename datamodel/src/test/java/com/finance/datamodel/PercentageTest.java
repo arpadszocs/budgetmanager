@@ -9,16 +9,16 @@ public class PercentageTest {
 
 	@Test
 	public void testPercentageAsValue() {
-		final Percentage percentage = new Percentage(100, 200);
+		final Percentage percentage = new Percentage(80);
 
-		assertThat(percentage.asValue(), is(50D));
+		assertThat(percentage.asValue(), is(80D));
 	}
 
 	@Test
 	public void testPercentageAsFactor() {
-		final Percentage percentage = new Percentage(50, 200);
+		final Percentage percentage = new Percentage(50);
 
-		assertThat(percentage.asFactor(), is(0.25));
+		assertThat(percentage.asFactor(), is(0.5));
 
 	}
 

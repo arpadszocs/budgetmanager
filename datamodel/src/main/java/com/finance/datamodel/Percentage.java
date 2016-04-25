@@ -1,21 +1,19 @@
 package com.finance.datamodel;
 
 public class Percentage {
-	private final double actual;
-	private final double planned;
+	private final double percentage;
 
-	public Percentage(final double actual, final double planned) {
+	public Percentage(final double percentage) {
 		super();
-		this.actual = actual;
-		this.planned = planned;
+		this.percentage = percentage;
 	}
 
 	public double asFactor() {
-		return this.asValue() / 100;
+		return this.percentage / 100;
 	}
 
 	public double asValue() {
-		return this.actual * 100 / this.planned;
+		return this.percentage;
 
 	}
 
