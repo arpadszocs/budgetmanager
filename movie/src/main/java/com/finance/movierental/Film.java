@@ -42,7 +42,13 @@ public class Film implements Comparable<Film> {
 
 	@Override
 	public int compareTo(final Film film) {
-		if (this.length > film.length) {
+		if (film.getName() == null) {
+			return 1;
+		}
+		final int compare = this.getName().compareTo(film.getName());
+		if (compare != 0) {
+			return compare;
+		} else if (this.length > film.length) {
 			return 1;
 		} else if (this.length < film.length) {
 			return -1;
